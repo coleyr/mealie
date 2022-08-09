@@ -32,7 +32,8 @@ COPY --from=builder /app  .
 COPY ./Caddyfile /app/
 
 ENV HOST 0.0.0.0
-EXPOSE 3000
+EXPOSE 80
+EXPOSE 443
 
 RUN chmod +x /app/run.sh
 ENTRYPOINT /app/run.sh

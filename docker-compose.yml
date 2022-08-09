@@ -10,7 +10,8 @@ services:
     volumes:
       - mealie-data:/app/data/
     ports:
-      - 9091:3000
+      - 80:80
+      - 443:443
     environment:
       - API_URL=http://mealie-api:9000
 

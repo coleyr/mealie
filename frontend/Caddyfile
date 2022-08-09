@@ -1,11 +1,6 @@
-{
-	auto_https off
-	admin off
-}
 
-:3000 {
+cltadventure.com {
 	@apidocs path /docs /openapi.json
-
 	@static {
 		file
 		path *.ico *.css *.js *.gif *.jpg *.jpeg *.png *.svg *.woff *.woff2 *.webp
