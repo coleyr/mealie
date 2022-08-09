@@ -2,12 +2,13 @@ version: "3.4"
 services:
   mealie-frontend:
     container_name: mealie-frontend
-    image: mealie-frontend:dev
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: coleyrangel/mealie_custom:frontend
+    # build:
+    #   context: ./frontend
+    #   dockerfile: Dockerfile
     restart: always
     volumes:
+      - /home/ec2-user/mealie
       - mealie-data:/app/data/
     ports:
       - 80:80
@@ -35,10 +36,11 @@ services:
       - THEME_DARK_ERROR=#EF5350
   mealie:
     container_name: mealie-api
-    build:
-      context: ./
-      target: production
-      dockerfile: Dockerfile
+    image: coleyrangel/mealie_custom:mealie_api
+    # build:
+    #   context: ./
+    #   target: production
+    #   dockerfile: Dockerfile
     restart: always
     volumes:
       - mealie-data:/app/data/
